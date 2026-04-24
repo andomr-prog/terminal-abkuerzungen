@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/andomr-prog/terminal-abkuerzungen/actions/workflows/ci.yml/badge.svg)](https://github.com/andomr-prog/terminal-abkuerzungen/actions/workflows/ci.yml)
 
-A [Claude Code](https://claude.ai/code) skill that explains terminal commands, keyboard shortcuts, and shell configuration — in German or English. Also ships a `cheat` command you can call directly from your terminal.
+A [Claude Code](https://claude.ai/code) skill that explains terminal commands, keyboard shortcuts, and shell configuration — in German or English. Also ships a `cheat` command (cheat — German | cheat en — English) you can call directly from your terminal. 
 
 ## Features
 
