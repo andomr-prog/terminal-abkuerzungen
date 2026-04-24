@@ -14,6 +14,18 @@ description: Terminal commands, shortcuts, keyboard shortcuts, and guides for .e
 **Tip:** `~` is shorthand for your home directory. On Mac you type `~` with **Option + N**.
 
 
+## Viewing files & folders
+
+| Command | What it does |
+|---------|-------------|
+| `ls` | List all visible files and folders |
+| `ls -la` | List everything including hidden files, with size, permissions, date |
+| `ls -lh` | Like `-la` but file sizes in human-readable format (KB, MB) |
+| `tree` | Show folder structure as a tree (`brew install tree`) |
+| `tree -L 2` | Tree, max 2 levels deep |
+| `open .` | Open current folder in Finder |
+
+
 ## Creating / deleting files & folders
 
 | Command | What it does | Example |
@@ -24,7 +36,48 @@ description: Terminal commands, shortcuts, keyboard shortcuts, and guides for .e
 | `rm filename` | Deletes a file (irreversibly!) | `rm old-note.txt` |
 | `rm -rf folder` | Deletes a folder including its contents (caution!) | `rm -rf node_modules` |
 | `cp source destination` | Copies a file | `cp .env .env.backup` |
+| `cp -r source destination` | Copies a folder recursively | `cp -r src backup/` |
 | `mv source destination` | Moves or renames | `mv old.txt new.txt` |
+
+> ⚠️ `rm` and `rm -rf` delete **without a trash bin** — there is no undo!
+
+
+## Viewing file contents
+
+| Command | What it does |
+|---------|-------------|
+| `cat file` | Print the entire contents of a file |
+| `less file` | Read file page by page — `q` quits |
+| `head -20 file` | Show the first 20 lines |
+| `tail -20 file` | Show the last 20 lines |
+| `tail -f log` | Watch a file live — useful for logs |
+| `open file` | Open file with its default app |
+| `code .` | Open current folder in VS Code |
+| `cursor .` | Open current folder in Cursor |
+
+
+## Search
+
+| Command | What it does | Example |
+|---------|-------------|---------|
+| `grep word file` | Search for text in a file | `grep "error" app.log` |
+| `grep -r word .` | Search recursively in current folder | `grep -r "API_KEY" .` |
+| `find . -name "*.txt"` | Find files by pattern | `find . -name "*.env"` |
+| `which cmd` | Show where a command is located | `which python` |
+| `man cmd` | Open the manual — `q` quits | `man ls` |
+| `history` | Show recently entered commands | |
+
+
+## Processes & system
+
+| Command | What it does |
+|---------|-------------|
+| `ps aux` | Show all running processes |
+| `kill PID` | Terminate a process by ID (PID from `ps aux`) |
+| `top` / `htop` | Live overview of all processes (`brew install htop`) |
+| `df -h` | Show disk usage |
+| `du -sh *` | Show size of subdirectories in current folder |
+| `echo $PATH` | Show current PATH variable |
 
 
 ## Network & Web

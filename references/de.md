@@ -11,6 +11,18 @@
 **Tipp:** `~` ist die Kurzform für dein Home-Verzeichnis. Auf dem Mac tippst du `~` mit **Option + N**.
 
 
+## Dateien & Ordner anzeigen
+
+| Befehl | Was er tut |
+|--------|-----------|
+| `ls` | Listet alle sichtbaren Dateien und Ordner auf |
+| `ls -la` | Alles inkl. versteckte Dateien, mit Größe, Rechten, Datum |
+| `ls -lh` | Wie `-la`, aber Dateigrößen lesbar (KB, MB) |
+| `tree` | Ordnerstruktur als Baum (`brew install tree`) |
+| `tree -L 2` | Baum, nur 2 Ebenen tief |
+| `open .` | Aktuellen Ordner im Finder öffnen |
+
+
 ## Dateien & Ordner erstellen / löschen
 
 | Befehl | Was er tut | Beispiel |
@@ -21,7 +33,48 @@
 | `rm dateiname` | Löscht eine Datei (unwiderruflich!) | `rm alte-notiz.txt` |
 | `rm -rf ordner` | Löscht einen Ordner inkl. Inhalt (Vorsicht!) | `rm -rf node_modules` |
 | `cp quelle ziel` | Kopiert eine Datei | `cp .env .env.backup` |
+| `cp -r quelle ziel` | Kopiert einen Ordner rekursiv | `cp -r src backup/` |
 | `mv quelle ziel` | Verschiebt oder benennt um | `mv alt.txt neu.txt` |
+
+> ⚠️ `rm` und `rm -rf` löschen **ohne Papierkorb** — es gibt kein Rückgängig!
+
+
+## Dateien ansehen
+
+| Befehl | Was er tut |
+|--------|-----------|
+| `cat datei` | Gesamten Inhalt einer Datei ausgeben |
+| `less datei` | Datei seitenweise lesen — `q` beendet |
+| `head -20 datei` | Erste 20 Zeilen anzeigen |
+| `tail -20 datei` | Letzte 20 Zeilen anzeigen |
+| `tail -f log` | Datei live mitlesen — nützlich für Logs |
+| `open datei` | Datei in der Standard-App öffnen |
+| `code .` | Aktuellen Ordner in VS Code öffnen |
+| `cursor .` | Aktuellen Ordner in Cursor öffnen |
+
+
+## Suchen
+
+| Befehl | Was er tut | Beispiel |
+|--------|-----------|---------|
+| `grep wort datei` | In einer Datei nach Text suchen | `grep "error" app.log` |
+| `grep -r wort .` | Rekursiv im aktuellen Ordner suchen | `grep -r "API_KEY" .` |
+| `find . -name "*.txt"` | Dateien per Muster finden | `find . -name "*.env"` |
+| `which befehl` | Zeigt wo ein Befehl liegt | `which python` |
+| `man befehl` | Handbuch aufrufen — `q` beendet | `man ls` |
+| `history` | Zuletzt eingegebene Befehle anzeigen | |
+
+
+## Prozesse & System
+
+| Befehl | Was er tut |
+|--------|-----------|
+| `ps aux` | Alle laufenden Prozesse anzeigen |
+| `kill PID` | Prozess per ID beenden (PID aus `ps aux`) |
+| `top` / `htop` | Live-Übersicht aller Prozesse (`brew install htop`) |
+| `df -h` | Festplatten-Auslastung anzeigen |
+| `du -sh *` | Größe der Unterordner im aktuellen Verzeichnis |
+| `echo $PATH` | Aktuelle PATH-Variable anzeigen |
 
 
 ## Netzwerk & Web
